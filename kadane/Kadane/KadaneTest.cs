@@ -24,16 +24,13 @@ namespace Kadane
 
             foreach (var item in sequence)
             {
-                if (item + sumOfMaxSequence >= sumOfMaxSequence)
+                if (item >= sumOfMaxSequence)
                 {
-                    if (item >= sumOfMaxSequence)
-                    {
-                        sumOfMaxSequence = item;
-                    }
-                    else
-                    {
-                        sumOfMaxSequence = item + sumOfMaxSequence;
-                    }
+                    sumOfMaxSequence = item;
+                }
+                else if (item + sumOfMaxSequence >= sumOfMaxSequence)
+                {
+                    sumOfMaxSequence = item + sumOfMaxSequence;
                 }
             }
 
